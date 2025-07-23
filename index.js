@@ -6,7 +6,7 @@ const {createProxyMiddleware}= require('http-proxy-middleware')
 
 const rateLimit =require('express-rate-limit')
 
-const PORT=3005
+const PORT=3004
 
 const limiter=rateLimit({
     windows:2*60*1000,
@@ -52,4 +52,3 @@ app.use('/reminderservice',createProxyMiddleware({target:'http://localhost:3003/
 app.listen(PORT,()=>{
     console.log(`server started at port ${PORT}` )
 })
-
